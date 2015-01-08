@@ -1,0 +1,46 @@
+<ion-view title="Subjects">
+  <ion-content class="has-header">
+
+    <ion-list>
+
+      <ion-item class="item item-icon-left item-icon-right" 
+      			ng-repeat="item in subjects" 
+      			can-swipe="true">
+
+        <i class="icon ion-android-list item-grey"></i>
+
+        {{item.subjectName}}
+        <p>{{item.desc}}</p>
+
+        <!-- <i class="icon ion-ios7-arrow-right item-grey"></i> -->
+        <i class="badge badge-{{getClassName(item.status)}}" 
+          ng-show="item.status!=''">
+           &nbsp;{{item.status}}  
+        </i>
+
+          <ion-option-button class="button-positive"
+                              ng-click="changeStatus(item.id, 'enrolled')">Enrolled
+          
+          </ion-option-button>
+
+          <ion-option-button class="button-balanced"
+                              ng-click="changeStatus(item.id, 'passed')">Passed
+          
+          </ion-option-button>
+          
+          <ion-option-button class="button-energized"
+                             ng-click="changeStatus(item.id, 'failed')">Failed
+          </ion-option-button>
+
+          <ion-option-button class="button-assertive"
+                             ng-click="changeStatus(item.id, 'dropped')">Dropped
+          </ion-option-button>  
+        </ion-item>
+
+        
+
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

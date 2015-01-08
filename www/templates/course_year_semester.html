@@ -1,0 +1,13 @@
+<ion-view title="Semester">
+<ion-nav-back-button class="button-clear"><i class="icon ion-android-arrow-back"></i></ion-nav-back-button>
+  <ion-content class="has-header" >
+    <ion-list>
+      <ion-item class="item item-icon-left" 
+      			ng-repeat="item in semester" 
+      			href="#/app/courses/year/semester/{{stateParams.stateParams}},{{item.id}}">
+       <i class="icon ion-android-calendar item-grey"></i>
+        {{item.semesterName}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

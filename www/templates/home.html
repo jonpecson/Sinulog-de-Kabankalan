@@ -1,0 +1,64 @@
+<ion-view title="KCC Subject Tracker">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+    
+    <ion-content class="padding spc-from-header" scrollbar-y="false" style="margin-top: -17px">
+        <div class="list">
+
+            <div class="item item-avatar item-divider home-divider"><i class="icon ion-android-star card-side-icon"></i>
+                <h2 class="card-head">Enrolled</h2>
+            </div>
+
+                <ion-list>
+                  <ion-item ng-repeat="item in subjects | filter : status = 'enrolled'" class="item item-icon-left item-icon-right home-page-topics">
+                  <i class="icon ion-android-list item-grey paper-list-icon"></i>
+                  {{item.subjectName}}
+                  <p>{{item.desc}}</p>
+                    
+                  </ion-item>
+                </ion-list>
+
+            <div class="item item-avatar item-divider home-divider"><i class="icon ion-checkmark-circled card-side-icon"></i>
+                <h2 class="card-head">Passed</h2>
+            </div>
+                <ion-list>
+                  <ion-item ng-repeat="item in subjects | filter : status = 'passed'" class="item item-icon-left item-icon-right home-page-topics">
+                  <i class="icon ion-android-list item-grey paper-list-icon"></i>
+                  {{item.subjectName}}
+                  <p>{{item.desc}}</p>
+                    
+                  </ion-item>
+                </ion-list>
+            
+            <div class="item item-avatar item-divider home-divider"><i class="icon ion-thumbsdown card-side-icon"></i>
+                <h2 class="card-head">Failed</h2>
+            </div>
+                <ion-list>
+                  <ion-item ng-repeat="item in subjects | filter : status = 'failed'" class="item item-icon-left item-icon-right home-page-topics">
+                  <i class="icon ion-android-list item-grey paper-list-icon"></i>
+                  {{item.subjectName}}
+                  <p>{{item.desc}}</p>
+                    
+                  </ion-item>
+                </ion-list>
+            <div class="item item-avatar item-divider home-divider"><i class="icon ion-android-alert card-side-icon"></i>
+                <h2 class="card-head">Dropped</h2>
+            </div>
+                <ion-list>
+                  <ion-item ng-repeat="item in subjects | filter : status = 'dropped'" class="item item-icon-left item-icon-right home-page-topics">
+                  <i class="icon ion-android-list item-grey paper-list-icon"></i>
+                  {{item.subjectName}}
+                  <p>{{item.desc}}</p>
+                    
+                  </ion-item>
+                </ion-list>
+           
+        </div>
+    </ion-content>
+    <!-- <div class="tabs psd-tab">
+        <div class="tab-item psd-tab-item" ui-sref="app.courses"><i class="icon ion-plus psd-icon-home"></i>
+        </div>
+    </div> -->
+    <br>
+</ion-view>

@@ -1,0 +1,11 @@
+<ion-view title="Year Level">
+  <ion-content class="has-header">
+    <ion-list>
+      <ion-item class="item item-icon-left item-icon-right" ng-repeat="year in yearLevel" href="#/app/courses/year/{{course.courseCode}},{{year.id}}">
+       <i class="icon ion-android-people item-grey"></i>
+        {{course.courseCode}} {{year.id}}
+        <p>{{year.alias}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
