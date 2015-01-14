@@ -1,1 +1,142 @@
 /* Empty. Add your own CSS if you like */
+
+@font-face {
+    font-family: dosis-medium;
+    src: url(../fonts/Dosis-Medium.otf) format('opentype');
+    font-weight: 400;
+    font-style: normal
+}
+@font-face {
+    font-family: dosis;
+    src: url(../fonts/Dosis-Regular.otf) format('opentype');
+    font-weight: 400;
+    font-style: normal
+}
+@font-face {
+    font-family: dosis-extrabold;
+    src: url(../fonts/Dosis-ExtraBold.otf) format('opentype');
+    font-weight: 400;
+    font-style: normal
+}
+
+/* Empty. Add your own CSS if you like */
+
+/* font */
+@font-face {
+    font-family: roboto-lt;
+    src: url(../fonts/Roboto-Light.ttf);
+}
+@font-face {
+    font-family: roboto-black;
+    src: url(../fonts/Roboto-Black.ttf);
+}
+@font-face {
+    font-family: roboto;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: roboto-thin;
+    src: url(../fonts/Roboto-Thin.ttf);
+}
+
+h6 {
+	color : #8F8F8F;
+	margin-top: 2px;
+    margin-bottom: 2.33em;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.profile-preview {
+    background-color:#3F3F3F;
+    background: url(../img/side.png);
+    background-size: cover;
+    width: 115%
+}
+/*override*/
+.item-avatar > img:first-child {
+    border-radius:50%;
+    
+}
+
+.profile-preview > h2{
+    color:#BBBDC0;
+    font-family: roboto-lt;
+}
+
+.link {
+    color:#FFFFFF;
+    text-decoration:none;
+}
+
+
+/*Login*/
+.small {
+  font-size:80% !important;
+}
+
+.respect-privacy {
+  color:white;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bg-image {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.red-car-img {
+  background-image: url("../img/39th.jpg"); 
+}
+
+.login-bottom {
+  position:absolute;
+  bottom: 40px;
+  right: 0px;
+  left: 0px;
+}
+
+.list {
+  background: white;
+}
+
+.item-content .row, .item-content .col {
+  padding:0;
+}
+
+.login-title {
+  color:white;
+  font-family: Trebuchet MS1, Trebuchet MS, sans-serif;
+  text-align: center;
+  font-size: 36px;
+  margin-top: 80px !important;
+  margin-bottom:20px;
+}
+
+.padding map {
+  border: 1px solid lightgrey;
+  margin-top: -1px;
+}
+
+.bar-transparent h1 {
+  color:white;
+}
+
+.pull-right {
+  float:right;
+  right:109x;
+}
+
+.forgot-password {
+  color:white;
+  margin-right:11px;
+  text-decoration: none;
+  margin-top:-13px;
+}
+
+

@@ -1250,31 +1250,32 @@ i.thumb {
     padding: 5px
 }
 .psd-icon-home {
-    height: 56px!important;
-    width: 56px!important;
+    height: 35px!important;
+    width: 35px!important;
     border-radius: 50%;
     color: #fff;
     background: #FF4081;
     font-size: 24px!important;
     -webkit-box-shadow: 2px 3px 3px 0 rgba(41, 41, 41, .3);
     box-shadow: 2px 3px 3px 0 rgba(41, 41, 41, .3);
-    padding-top: 2px
+/*    padding-top: 2px;
+    margin-top: 25px!important;*/
 }
 .card-side-icon {
     float: left;
-    margin-left: -56px;
-    font-size: 24px;
+    margin-left: -40px;
+    font-size: 30px;
     color: #FF4081;
-    padding-top: 3px
+    padding-top: 1px
 }
 .card-head {
     font-family: dosis-medium;
     color: #7b7b7b;
     margin-left: 0!important;
-    margin-top: 7px!important
+    margin-top: 7px!important;
 }
 .home-divider {
-    margin-left: -10px;
+    margin-left: -25px;
     width: 115%;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -1284,7 +1285,7 @@ i.thumb {
     margin-left: 10px
 }
 .paper-list-icon {
-    margin-left: -8px!important;
+    margin-left: -5px!important;
     font-size: 24px!important;
     margin-top: -3px!important;
     color: #727272
@@ -1308,7 +1309,7 @@ i.thumb {
     font-size: 14px
 }
 .side-bar-header {
-    height: 100px;
+    height: 80px;
     width: 115%;
     border-width: 0;
     border-style: none;
@@ -1334,7 +1335,7 @@ i.thumb {
     margin-bottom: 12px
 }
 .side-menu-content-top {
-    margin-top: 50px
+    margin-top: 40px;
 }
 .sub-topic-search {
     margin-top: 55px;
@@ -2027,3 +2028,5 @@ div.topic-name-topic i {
         margin-left: 21px!important
     }
 }
+
+

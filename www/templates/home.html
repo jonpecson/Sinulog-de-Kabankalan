@@ -1,64 +1,84 @@
-<ion-view title="KCC Subject Tracker">
+<ion-view title="Sinulog de Kabankalan 2015" ng-init="init()">
+
   <ion-nav-buttons side="left">
-    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    <button menu-toggle="left" class="button button-icon icon ion-android-menu "></button>
   </ion-nav-buttons>
-    
+
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-android-search" ui-sref="app.browse"></button>
+  </ion-nav-buttons>
     <ion-content class="padding spc-from-header" scrollbar-y="false" style="margin-top: -17px">
+
+<!--         <div class="item item-input-inset">
+            <label class="item-input-wrapper">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="Search" ng-model="searchKey" >
+            </label>
+        </div> -->
+
+
+
         <div class="list">
 
-            <div class="item item-avatar item-divider home-divider"><i class="icon ion-android-star card-side-icon"></i>
-                <h2 class="card-head">Enrolled</h2>
+            <div class="item item-avatar item-divider home-divider"><i class="icon ion-ios-calendar card-side-icon"></i>
+                <h2 class="card-head">January 16, 2015 (Friday)</h2>
             </div>
 
                 <ion-list>
-                  <ion-item ng-repeat="item in subjects | filter : status = 'enrolled'" class="item item-icon-left item-icon-right home-page-topics">
-                  <i class="icon ion-android-list item-grey paper-list-icon"></i>
-                  {{item.subjectName}}
-                  <p>{{item.desc}}</p>
+                  <ion-item ng-repeat="item in events | filter : day='FRI' |filter : searchKey" class="item item-icon-left item-icon-right home-page-topics">
+                  <i class="icon ion-clock item-grey paper-list-icon"></i>
+                  {{item.time}}
+
+                  <p>{{item.eventName}}</p>
+                  <p>{{item.sponsor}}</p>
+                  <h6>
+                      {{item.location}}
+                  </h6>
+                  
                     
                   </ion-item>
                 </ion-list>
 
-            <div class="item item-avatar item-divider home-divider"><i class="icon ion-checkmark-circled card-side-icon"></i>
-                <h2 class="card-head">Passed</h2>
+            <div class="item item-avatar item-divider home-divider"><i class="icon ion-ios-calendar card-side-icon"></i>
+                <h2 class="card-head">January 17, 2015 (Saturday)</h2>
             </div>
+
                 <ion-list>
-                  <ion-item ng-repeat="item in subjects | filter : status = 'passed'" class="item item-icon-left item-icon-right home-page-topics">
-                  <i class="icon ion-android-list item-grey paper-list-icon"></i>
-                  {{item.subjectName}}
-                  <p>{{item.desc}}</p>
+                  <ion-item ng-repeat="item in events | filter : day='SAT' |filter : searchKey" class="item item-icon-left item-icon-right home-page-topics">
+                  <i class="icon ion-clock item-grey paper-list-icon"></i>
+                  {{item.time}}
+
+                  <p>{{item.eventName}}</p>
+                  <p>{{item.sponsor}}</p>
+                  <h6>
+                      {{item.location}}
+                  </h6>
+                  
                     
                   </ion-item>
                 </ion-list>
-            
-            <div class="item item-avatar item-divider home-divider"><i class="icon ion-thumbsdown card-side-icon"></i>
-                <h2 class="card-head">Failed</h2>
+
+            <div class="item item-avatar item-divider home-divider"><i class="icon ion-ios-calendar card-side-icon"></i>
+                <h2 class="card-head">January 18, 2015 (Sunday)</h2>
             </div>
+
                 <ion-list>
-                  <ion-item ng-repeat="item in subjects | filter : status = 'failed'" class="item item-icon-left item-icon-right home-page-topics">
-                  <i class="icon ion-android-list item-grey paper-list-icon"></i>
-                  {{item.subjectName}}
-                  <p>{{item.desc}}</p>
-                    
-                  </ion-item>
-                </ion-list>
-            <div class="item item-avatar item-divider home-divider"><i class="icon ion-android-alert card-side-icon"></i>
-                <h2 class="card-head">Dropped</h2>
-            </div>
-                <ion-list>
-                  <ion-item ng-repeat="item in subjects | filter : status = 'dropped'" class="item item-icon-left item-icon-right home-page-topics">
-                  <i class="icon ion-android-list item-grey paper-list-icon"></i>
-                  {{item.subjectName}}
-                  <p>{{item.desc}}</p>
+                  <ion-item ng-repeat="item in events | filter : day='SUN' |filter : searchKey" class="item item-icon-left item-icon-right home-page-topics">
+                  <i class="icon ion-clock item-grey paper-list-icon"></i>
+                  {{item.time}}
+
+                  <p>{{item.eventName}}</p>
+                  <p>{{item.sponsor}}</p>
+                  <h6>
+                      {{item.location}}
+                  </h6>
+                  
                     
                   </ion-item>
                 </ion-list>
            
         </div>
     </ion-content>
-    <!-- <div class="tabs psd-tab">
-        <div class="tab-item psd-tab-item" ui-sref="app.courses"><i class="icon ion-plus psd-icon-home"></i>
-        </div>
-    </div> -->
+
     <br>
 </ion-view>

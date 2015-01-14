@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova', 'firebase'])
 
 .run(function($ionicPlatform,DB) {
   $ionicPlatform.ready(function() {
@@ -16,6 +16,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     if(window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
+      // StatusBar.hide();
     }
 
     // Initialize database
@@ -50,62 +51,54 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
       }
     })
-    .state('app.courses', {
-      url: "/courses",
+
+    .state('app.chat', {
+      url: "/chat",
       views: {
         'menuContent' :{
-          templateUrl: "templates/courses.html",
-          controller: 'CoursesCtrl'
+          templateUrl: "templates/chat.html",
+          controller: 'ChatCtrl'
         }
       }
     })
 
-    .state('app.course_year', {
-      url: "/courses/:courseCode",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/course_year.html",
-          controller: 'CoursesYearLevelCtrl'
-        }
-      }
-    })
-
-    .state('app.course_year_semester', {
-      url: "/courses/year/:stateParams",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/course_year_semester.html",
-          controller: 'SemesterCtrl'
-        }
-      }
-    })
-
-    .state('app.course_year_semester_subjects', {
-      url: "/courses/year/semester/:stateParams",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/course_year_semester_subjects.html",
-          controller: 'SubjectsCtrl'
-        }
-      }
+    .state('login', {
+      url: "/login",
+      templateUrl: "templates/login.html",
+      controller: 'LoginCtrl'
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/home');
+  // $urlRouterProvider.otherwise('/app/home');
+    $urlRouterProvider.otherwise('/login');
 })
 
 .constant('DB_CONFIG', {
-    name: 'SubjectTrackerDbDemo_01',
+    name: 'SubjectTrackerDbDemo08',
     tables: {
         subjects: {
-            id: 'integer primary key ',
+            id: 'integer primary key',
             status: 'text',
-            subjectName: 'text ',
+            subjectName: 'text',
             desc: 'text',
             units: 'integer',  
             course: 'text',
             yearLevel : 'integer',
-            semester : 'integer'
+            semester : 'integer',
+            dateModified : 'text'
         }
     }
+})
+
+.filter('timeAgo', function (){
+  var cache = [];
+  return function(date) {
+    if(typeof cache[date] === 'string')return cache[date];
+    var prettyDate = moment(date, 'X').fromNow();
+    cache[date] = prettyDate;
+    return prettyDate;
+  }
 });
+
+
+
