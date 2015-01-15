@@ -10,14 +10,6 @@ angular.module('starter.controllers', [])
   }
 
 
-  $scope.getCurrentDate = function(dateModified) {
-    var time = moment(dateModified);
-    // var validateTime = new Date(time).getTime().toString()
-    // console.log(time);
-    return time;
-
-  };
-
   $scope.login = function() {
     $state.go('login');
   }
@@ -179,7 +171,46 @@ angular.module('starter.controllers', [])
     }]
 })
 
-.controller('ChatCtrl', function($scope) {
+.controller('ChatCtrl', function($scope, $firebase, $rootScope,$timeout) {
+
+  
+
+    var ref = new Firebase('https://sinulogdekabankalan.firebaseio.com/chats');
+    var sync = $firebase(ref);
+    $scope.chats = sync.$asArray(); 
+    var refreshDates = function () {
+        $timeout(refreshDates, 1000);
+    };
+    refreshDates();
+  
+
+  $scope.getCurrentDate = function(timeAgo) {
+    var time = moment(timeAgo);
+    // var validateTime = new Date(time).getTime().toString()
+    // console.log(time);
+    return time;
+
+  };
+
+  
+   
+        
+  $scope.sendChat = function(chat) {
+
+    var time = moment();
+    var timeStamp = new Date(time).getTime(); 
+    console.log(new Date(time).getTime()); 
+
+
+    console.log($rootScope.user.facebook);
+      $scope.chats.$add({
+          user: $rootScope.user.facebook.displayName,
+          face: $rootScope.user.facebook.cachedUserProfile.picture.data.url,
+          message: chat.message,
+          timestamp : timeStamp
+      });
+      chat.message = "";
+  }
 
 })
 

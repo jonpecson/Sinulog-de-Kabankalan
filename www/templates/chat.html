@@ -19,6 +19,9 @@
                     <img ng-src="{{chat.face}}">
                     <h2>{{chat.user}}</h2>
                     <p>{{chat.message}}</p>
+                    <h6>
+                      {{chat.timestamp|fromNow}}
+                  </h6>
                 </ion-item>
 
             </ion-list>

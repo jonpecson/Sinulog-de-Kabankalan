@@ -98,7 +98,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     cache[date] = prettyDate;
     return prettyDate;
   }
-});
+})
+
+.filter('fromNow', ['$window', function ($window) {
+    return function (dateString) {
+        return $window.moment(new Date(dateString)).fromNow()
+    };
+}]);
 
 
 
